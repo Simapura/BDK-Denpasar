@@ -14,7 +14,7 @@ interface LoginViewProps {
 }
 
 export const UPLOADED_LOGO_PATH =
-'/BDK-Denpasar/Lambang Emas Krama Hindu Denpasar.png';
+'/Lambang Emas Krama Hindu Denpasar.png';
 
 function resolveRoleFromMember(member: Anggota): UserRole {
   const kategori = resolveKategoriKeanggotaan(member.jabatan, member.kategoriKeanggotaan);
