@@ -6,7 +6,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/arya/',
+    base: '/BDK-Denpasar/',
     plugins: [
       react(),
       tailwindcss(),
