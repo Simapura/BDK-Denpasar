@@ -132,18 +132,31 @@ export function DashboardView({
     <div className="space-y-6">
       {/* PENGUMUMAN Marquee Bar */}
       <div className="flex items-stretch overflow-hidden rounded-xl border border-[#DFD7BF] bg-[#0D6B48] shadow-2xs">
-        <div className="flex items-center bg-[#E3A924] px-3.5 py-2 text-[11px] font-bold tracking-wider text-[#142019] shrink-0">
+        <div className="relative z-10 flex items-center bg-[#E3A924] px-3.5 py-2 text-[11px] font-bold tracking-wider text-[#142019] shrink-0">
           PENGUMUMAN
         </div>
-        <div className="relative flex flex-1 items-center overflow-hidden px-3 text-xs font-medium text-white">
+        <div className="relative flex min-w-0 flex-1 items-center overflow-hidden text-xs font-medium text-white">
           <div className="animate-marquee">
-            <span className="pr-12">{data.pengumuman}</span>
-            <span className="pr-12 text-[#FDE68A]" aria-hidden="true">
-              ◆
-            </span>
-            <span className="pr-12" aria-hidden="true">
-              {data.pengumuman}
-            </span>
+            {[0, 1].map((dup) => (
+              <div
+                key={dup}
+                className="flex shrink-0 items-center whitespace-nowrap"
+                aria-hidden={dup === 1}
+              >
+                <span className="pl-6">{data.pengumuman}</span>
+                <span className="px-6 text-[#FDE68A]" aria-hidden="true">
+                  ◆
+                </span>
+                {data.pengumuman.trim().length < 120 && (
+                  <>
+                    <span>{data.pengumuman}</span>
+                    <span className="px-6 text-[#FDE68A]" aria-hidden="true">
+                      ◆
+                    </span>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
         {canManage && (
@@ -153,7 +166,7 @@ export function DashboardView({
               setDraftPengumuman(data.pengumuman);
               setEditingPengumuman(true);
             }}
-            className="flex items-center gap-1 border-l border-white/15 bg-[#095438] px-3 text-[11px] font-medium text-[#FDE68A] hover:bg-[#07442D] shrink-0"
+            className="relative z-10 flex items-center gap-1 border-l border-white/15 bg-[#095438] px-3 text-[11px] font-medium text-[#FDE68A] hover:bg-[#07442D] shrink-0"
             title="Edit Pengumuman"
           >
             <Edit3 className="h-3 w-3" />
