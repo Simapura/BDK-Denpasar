@@ -14,7 +14,7 @@ interface LoginViewProps {
 }
 
 export const UPLOADED_LOGO_PATH =
-  '/assets/aistudio/file_0000000094e482119e3d21450a83d9ca_5fb95b55.png';
+'/BDK-Denpasar/Lambang Emas Krama Hindu Denpasar.png';
 
 function resolveRoleFromMember(member: Anggota): UserRole {
   const kategori = resolveKategoriKeanggotaan(member.jabatan, member.kategoriKeanggotaan);
