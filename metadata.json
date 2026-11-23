@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Manajemen Pura BDK Denpasar",
+  "description": "Dasbor manajemen administrasi, pengempon, jadwal piodalan, AD/ART, dokumentasi, dan transparansi keuangan Pura BDK Denpasar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
